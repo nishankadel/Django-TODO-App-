@@ -1,0 +1,52 @@
+{% extends 'todo/base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block css %} {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-1">
+        <li class="breadcrumb-item"><a href="/todo/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Login</li>
+    </ol>
+</nav>
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="shadow p-3 mb-1 bg-light rounded">
+            <h1>Login Now !</h1>
+            <hr>
+            <div class="shadow p-3 mb-1 bg-white rounded ">
+
+                <form class="mr-4" action="/todo/login/" method="post"> {% csrf_token %}
+                    {{ form| crispy }}
+                    <button type="submit" class=" mb-2 btn btn-primary"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+                        <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+                    </svg> Sign In</button>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            Not registered Yet ?
+                            <a class="ml-2" href="/todo/register/">Sign Up Now</a>
+                        </small>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+{% block js %} {% endblock %}

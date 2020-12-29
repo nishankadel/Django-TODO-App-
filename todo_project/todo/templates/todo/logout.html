@@ -1,0 +1,30 @@
+{% extends 'todo/base.html' %}
+
+{% block title %} Logout {% endblock %}
+
+{% block css %} {% endblock %}
+
+
+{% block body %}
+
+<div class="container mt-3">
+
+    <div class="shadow p-3 mb-1 bg-white rounded">
+        <h1>You are Logged out !</h1>
+        <hr>
+    </div>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+
+        <small class="text-muted">
+           Sign In again
+            <a class="ml-2" href="/todo/login/">Sign In Now</a>
+        </small>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block js %} {% endblock %}
